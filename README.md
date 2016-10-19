@@ -13,5 +13,5 @@ see https://facebook.github.io/react-native/docs/getting-started.html#content
   
 ### Android:
 
-  - Android SDK
+  - Android SDK (4.4 - 7.0)
   
