@@ -2,12 +2,12 @@
 
 The repository for the kommunikationskonzept project
 
-Prerequisites:
+## Prerequisites:
 
-React Native:
+# React Native:
   - NodeJS
   - NPM
   
-Android:
+# Android:
   - Android SDK
   
