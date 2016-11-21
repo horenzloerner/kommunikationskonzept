@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            View Orders
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <h2>Übersicht der Aufträge</h2>
+    <ul>
+        <li *ngFor="let order of getOrders()">{{order.name}} - {{order.getStatus()}}</li>
+    </ul>
+</ion-content>
