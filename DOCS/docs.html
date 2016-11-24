@@ -1,9 +1,29 @@
-<p>
 <h2>API Documentation</h2>
-<ul>
-	<li>getUsers()</li>
-	<li>getTest()</li>
-</ul>
+<p>
+	@POST
+	@Path("/addRequest")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+</p>
+<p>
+	@GET
+	@Path("/assignRequest/{userId}/{requestId}")
+	@Produces(MediaType.TEXT_PLAIN)
+</p>
+<p>
+	@GET
+	@Path("/registerNewUser/{userRole}/{userName}")
+	@Produces(MediaType.TEXT_PLAIN)
+</p>
+<p>
+	@GET
+	@Path("/addUserToGroup/{userId}/{groupCode}")
+	@Produces(MediaType.TEXT_PLAIN)
+</p>
+<p>
+	@GET
+	@Path("/getRequests")
+	@Produces(MediaType.APPLICATION_JSON)
 </p>
 <h2>Ressources & Tools</h2>
 <ul>
