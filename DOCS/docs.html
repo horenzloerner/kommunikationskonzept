@@ -1,39 +1,85 @@
 <h2>API Documentation</h2>
-<p>
+	
+	@GET
+	@Path("/globalStatus")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response getGlobalStatus();
+	
+	@GET
+	@Path("/fetchUpdates")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response fetchUpdates();
 	@POST
-	@Path("/addRequest")
+	
+	@Path("/addRequest/{groupId}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-</p>
-<p>
+	public Response addRequest(Request request, @PathParam("groupId") int groupId);
+	
 	@GET
-	@Path("/assignRequest/{userId}/{requestId}")
+	@Path("/solveRequest/{groupId}/{requestId}")
 	@Produces(MediaType.TEXT_PLAIN)
-</p>
-<p>
+	public Response solveRequest(@PathParam("groupId") int groupId,@PathParam("requestId") int requestId);
+	
 	@GET
-	@Path("/registerNewUser/{userRole}/{userName}")
+	@Path("/submitTicket/{groupId}/{requestId}")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-</p>
-<p>
+	public Response submitTicket(@PathParam("groupId") int groupId,@PathParam("requestId") int requestId);
+	
 	@GET
-	@Path("/addUserToGroup/{userId}/{groupCode}")
+	@Path("/overview")
 	@Produces(MediaType.TEXT_PLAIN)
-</p>
-<p>
+	public Response getOverview();
+	
 	@GET
-	@Path("/getRequests")
+	@Path("/assignRequest/{groupId}/{userId}/{requestId}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response assignRequest(@PathParam("groupId") int groupId, @PathParam("userId") int userId, @PathParam("requestId") int requestId);
+	
+	@GET
+	@Path("/registerNewUser/{groupId}/{userRole}/{userName}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response addUser(@PathParam("groupId") int groupId, @PathParam("userRole") String userRole, @PathParam("userName") String userName);
+	
+	@GET
+	@Path("/unregisterUser/{groupId}/{userId}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response removeUser(@PathParam("groupId") int groupId, @PathParam("userId") int userId);
+	
+	@GET
+	@Path("/registerGroup/{groupCode}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response addUserToGroup(@PathParam("groupCode") String groupCode);
+	
+	@GET
+	@Path("/getUserRequests/{groupId}/{userId}")
 	@Produces(MediaType.APPLICATION_JSON)
-</p>
+	public Response returnUserRequests(@PathParam("userId") int userId,@PathParam("groupId") int groupId, InputStream incomingData) throws JsonGenerationException, JsonMappingException, IOException;
+	
+	@GET
+	@Path("/getRequests/{groupId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response returnRequests(@PathParam("groupId") int groupId,InputStream incomingData) throws JsonGenerationException, JsonMappingException, IOException; 
+
 <h2>Ressources & Tools</h2>
 <ul>
 	<li>Node JS</li>
 	<li>IONIC 2</li>
+	<li>Apache Tomcat</li>
 </ul>
-</p>
-<h2>Misc</h2>
+<h2>Dependencies</h2>
 <ul>
 	<li>Cordova Barcode Scanner</li>
-	<li></li>
+	<li>Jackson</li>
 </ul>
-</p>
+<h2>Enviroment</h2>
+<ul>
+	<li>Visual studio Code</li>
+	<li>Sublime Text</li>
+	<li>Eclipse Neon</li>
+	<li>Synology NAS</li>
+	<li>GULP</li>
+	<li>GIT</li>
+	<li>Mobile Phones</li>
+</ul>
