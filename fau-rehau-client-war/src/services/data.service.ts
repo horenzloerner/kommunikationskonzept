@@ -21,7 +21,7 @@ import { Question } from '../model/question';
 @Injectable()
 export class DataService {
     url: string = "http://v22017024302944644.powersrv.de:8080/industrie.demo/rest/test/";
-    //url: string = "http://localhost:8080/industrie.demo/rest/test/";
+    local_url: string = "http://localhost:8080/industrie.demo/rest/test/";
     COUCH_DB_URL: string = "http://5.45.99.65:5984/";
     private timer;
 
@@ -195,7 +195,7 @@ export class DataService {
             let toast = this.toastCtrl.create({
                 message: element,
                 duration: 3000,
-                position: 'bottom'
+                position: 'middle'
             });
             toast.present();
         });

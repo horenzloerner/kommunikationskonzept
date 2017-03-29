@@ -20,7 +20,6 @@ public class FauRehauTickTimer extends TimerTask{
 	}
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		for(FauRehauTick frTick : frTickObjectList) {
 			frTick.tick();
 		}

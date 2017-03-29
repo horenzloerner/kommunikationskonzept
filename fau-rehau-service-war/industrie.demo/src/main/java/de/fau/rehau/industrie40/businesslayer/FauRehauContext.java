@@ -12,11 +12,12 @@ public class FauRehauContext {
 	private static int questcounter = 0;
 
 	private static boolean bGameStarted = false;
-	private static Timer timer = new Timer(true);
+	private static Timer timer = new Timer();
 	private static ArrayList<FauRehauGroup> groupCollection = new ArrayList<FauRehauGroup>();
 	
 	private static FauRehauTickTimer timerTask = new FauRehauTickTimer();
-	{
+	
+	static {
 		timer.scheduleAtFixedRate(timerTask, 500, 500);
 	}
 	

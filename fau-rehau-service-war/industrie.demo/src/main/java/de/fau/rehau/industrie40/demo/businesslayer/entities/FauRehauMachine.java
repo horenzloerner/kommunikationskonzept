@@ -18,7 +18,13 @@ public class FauRehauMachine implements FauRehauTick {
 	private FauRehauProducer owner;
 	private int freezeTime = 0;
 	private int id;
-
+	public int getFreezeCost() {
+		return this.freezeCost;
+	}
+	public int getFreezeTime() {
+		return this.freezeTime;
+	}
+	
 	public void repair() {
 		this.status = "REPAIRING";
 		this.freezeTime = this.freezeCost;
@@ -79,10 +85,12 @@ public class FauRehauMachine implements FauRehauTick {
 			this.status = "AVAILABLE";
 			return;
 		}
+
 		if(!this.status.equals("AVAILABLE"))
 			return;
-		if(this.workloadPercentage >= 100 && this.currentOrder != null) {
-			
+
+		if(this.workloadPercentage >= 100 && this.currentOrder != null && !this.currentOrder.getStatus().equals("broken")) {
+
 				this.workloadPercentage = 100;
 				this.freezeCost = 80;
 				this.repairCost = 1500;
@@ -95,7 +103,9 @@ public class FauRehauMachine implements FauRehauTick {
 				this.status = "NEED_REPAIR";
 				this.currentOrder = null;
 				this.owner.addMessage("Eine Ihrer Maschinen ist defekt!");
-		} else if(this.currentOrder != null && this.workloadPercentage < 100) {
+				
+		} else if (this.currentOrder != null && this.workloadPercentage < 100 && !this.currentOrder.getStatus().equals("broken")) {
+
 			if(this.currentOrder.getProgress() >= 100) {
 				this.currentOrder.setFinished();
 				this.currentOrder = null;
@@ -113,8 +123,10 @@ public class FauRehauMachine implements FauRehauTick {
 				}
 
 				this.workloadPercentage += this.currentOrder.getLoadPerTick();
-				this.currentOrder.increaseProgress(this);				
+				this.currentOrder.increaseProgress();				
 			}			
+		} else if (this.currentOrder != null && this.currentOrder.getStatus().equals("broken")) {
+			this.currentOrder = null;
 		}
 	}
 

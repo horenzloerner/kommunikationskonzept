@@ -6,7 +6,7 @@ import java.util.List;
 import de.fau.rehau.industrie40.demo.businesslayer.entities.FauRehauScoreboardUser;
 
 public abstract class FauRehauUser {
-	protected int money = 10000;
+	protected int money = 100000;
 	protected int id;
 	protected String userName;
 	protected FauRehauScoreboardUser user;

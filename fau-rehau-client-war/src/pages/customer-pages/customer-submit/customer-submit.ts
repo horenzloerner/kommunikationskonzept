@@ -22,21 +22,30 @@ export class CustomerSubmitPage {
 
     quizModal.onWillDismiss(value => {
       if (value === true) {
-        BarcodeScanner.scan().then((barcodeData) => {
-          // Success! Barcode data is here
-          this.dataService.submitOrder(barcodeData.text, this.ammount);
-        }, (err) => {
-          // An error occurred
-          let alert = this.alertCtrl.create({
-            title: 'Fehler!',
-            subTitle: 'Folgender Fehler ist aufgetreten' + err,
-            ////      buttons: ['OK']
-          });
-          alert.present();
-        });
+        this.submit();
       }
     });
     quizModal.present();
+
+  }
+
+  submit() {
+    BarcodeScanner.scan().then((barcodeData) => {
+      // Success! Barcode data is here
+      this.dataService.submitOrder(barcodeData.text, this.ammount);
+    }, (err) => {
+      // An error occurred
+      let alert = this.alertCtrl.create({
+        title: 'Fehler!',
+        subTitle: 'Folgender Fehler ist aufgetreten' + err,
+        ////      buttons: ['OK']
+      });
+      alert.present();
+    });
+  }
+  submitDesktop() {
+
+    this.dataService.submitOrder("light", this.ammount);
 
   }
 

@@ -16,7 +16,7 @@
     <ion-list-header>
       Machinen
     </ion-list-header>
-    <ion-item *ngFor="let item of this.userService.currentPlayer.machines; let i = index">
+    <ion-item [style.margin-bottom.px]="20" *ngFor="let item of this.userService.currentPlayer.machines; let i = index">
       <h2>Maschine {{i}}</h2>
       <span *ngIf="item.active === true" style="margin-left:40px; color:green; text-decoration: underline;">AUSGEWÄHLT</span>
 <div *ngIf="item.status !== 'NEED_REPAIR' && item.status !== 'REPAIRING'" class="workload">
@@ -28,6 +28,7 @@
 </div>
 <div *ngIf="item.status === 'REPAIRING'">
   <h2>Maschine wird repariert</h2>
+  <h3>{{item.freezeTime}}s</h3>
 </div>
 <button style="float:leftt;"(tap)="setMachine(i);" ion-button clear item-right>Maschine auswählen</button>
 

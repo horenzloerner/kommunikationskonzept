@@ -45,9 +45,11 @@ public abstract class FauRehauOrder {
 		return (this.getLoad() * this.getAmmount()) / ((this.getTimeCost() * this.getAmmount()) / 0.5);
 	}
 	
-	public void increaseProgress(FauRehauMachine machine) {
-		this.setProgress(this.getProgress() + (double)(0.5 / (this.timeCost*this.ammount) * 100));
-
+	public void increaseProgress() {
+		double calc = this.getProgress() + (double)(50 / (this.timeCost*this.ammount));
+		
+		this.setProgress(calc);
+		System.out.println(calc);
 		for(FauRehauAttribute attribute : this.fauRehauAttributes) {
 			if(Math.random() >= 0.5) {
 				attribute.setCurrentValue(attribute.getCurrentValue() + (int)(Math.random() * attribute.spreadVar));
@@ -56,7 +58,6 @@ public abstract class FauRehauOrder {
 			}
 			if (attribute.getCurrentValue() < attribute.getMinValue() || attribute.getCurrentValue() > attribute.getMaxValue()) {
 				this.owner.addMessage("Fehler! - " + attribute.getName());
-				machine.setCurrentOrder(null);
 				this.setStatus("broken");
 			}
 		}

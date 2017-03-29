@@ -19,11 +19,23 @@ inputName: string;
 groupName: string;
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public userService: UserService, public dataService: DataService) {}
   scanGroupCode() {
-        this.dataService.registerGroup("test").subscribe((id) => {
+
+      BarcodeScanner.scan().then((barcodeData: any) => {
+        // Success! Barcode data is here
+        this.dataService.registerGroup(barcodeData.text).subscribe((id) => {
             this.userService.currentPlayer.groupId = id;
             this.navCtrl.push(RoleSelectionPage);
         }, (err) => { 
           this.dataService.error(err); 
+        });
+      }, (err) => {
+            // An error occurred
+            let alert = this.alertCtrl.create({
+               title: 'Fehler!',
+                subTitle: 'Folgender Fehler ist aufgetreten: ' ,
+       //         buttons: ['OK']
+            });
+            alert.present();
         });
     }
 }

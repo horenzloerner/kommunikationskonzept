@@ -18,9 +18,9 @@
     <ion-item *ngFor="let machine of this.userService.currentPlayer.machines">
         <h2>Maschine - {{machine.id}}</h2>
         <h3>Kosten: {{machine.repairCost}}</h3>
-        <h3>Auslastung: {{machine.workloadPercentage}}</h3>
+        <h3>Auslastung: {{machine.workloadPercentage}}%</h3>
         <p>Status: {{machine.status}}</p>
-        <button *ngIf="machine.status !== 'REPAIRING'" (tap)="repair(machine);" ion-button clear item-right>Wartung durchführen</button>
+        <button *ngIf="machine.status !== 'REPAIRING'" (tap)="repair(machine);" ion-button clear item-right>Wartung durchführen<br>({{machine.freezeCost}}) s.</button>
     </ion-item>
   </ion-list>
 </ion-content>
