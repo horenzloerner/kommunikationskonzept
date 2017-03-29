@@ -1,0 +1,85 @@
+<div class="container">
+    <h1>Add Question</h1>
+    <form #main="ngForm" (ngSubmit)="submitForm(main)">
+        <div class="form-group">
+            <label for="question-id">Unique Id</label>
+            <input class="form-control" required ngModel name="question-id" type="text" id="question-id">
+        </div>
+        <div class="form-group">
+            <label for="question-label">Question Label</label>
+            <input class="form-control" required ngModel name="question-label" type="text" id="question-label">
+        </div>
+        <div class="form-group">
+            <label for="question-descr">Question Description</label>
+            <textarea class="form-control" required ngModel name="question-description" rows="3"></textarea>
+        </div>
+        <div class="questions-container">
+            <div class="row">
+                <div class="col-md-2">Rank</div>
+                <div class="col-md-4">Label</div>
+                <div class="col-md-4">Description</div>
+                <div class="col-md-2">True?</div>
+            </div>
+            <div *ngIf="this.currentOptions.length === 0" class="row">
+                <div class="col-md-2">----</div>
+                <div class="col-md-4">----</div>
+                <div class="col-md-4">----</div>
+                <div class="col-md-2">----</div>
+            </div>
+            <div class="row" *ngFor="let option of this.currentOptions">
+                <div class="col-md-2">{{option.rank}}</div>
+                <div class="col-md-4">{{option.label}}</div>
+                <div class="col-md-4">{{option.description}}</div>
+                <div class="col-md-2">{{option.isRightAnswer}}</div>
+            </div>
+        </div>
+        <div class="card">
+            <form #f="ngForm" (ngSubmit)="onAddOption(f)">
+                <div class="form-group">
+                    <label for="label">Option Label</label>
+                    <input required class="form-control" type="text" ngModel id="label" name="label">
+                </div>
+                <div class="form-group">
+                    <label for="description">Option Description</label>
+                    <textarea required class="form-control" rows="3" id="description" ngModel name="description"></textarea>
+                </div>
+                <div class="check-box">
+                    <label for="is-right-answer">
+                        <input type="checkbox" name="is-right-answer" ngModel>
+                        Is right answer?
+                    </label>
+                </div>
+                <button [disabled]="!f.valid" type="submit" class="float-md-right btn btn-success">Add Option</button>
+            </form>
+        </div>
+        <div class="mt-md-5">
+            <div class="row">
+                <div class="col-md"><h3>Producer:</h3></div>
+                <div class="col-md"><h3>consumer:</h3></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="producer-pregame" ngModel>Pregame</label></div></div>
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="consumer-pregame" ngModel>Pregame</label></div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="producer-approve-order" ngModel>Approve order</label></div></div>
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="consumer-submit-order" ngModel>Submit order</label></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="producer-set-machine" ngModel>Change Active Machine</label></div></div>
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="consumer-cancel-order" ngModel>Cancel Order</label></div></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="producer-repair" ngModel>Repair</label></div></div>
+                <div class="col-md"><div class="check-box"><label><input type="checkbox" name="consumer-complete-quest" ngModel>Complete Quest</label></div></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" [disabled]="!main.valid" class="float-md-right btn-primary btn">Frage Online stellen!</button>
+        </div>
+    </form>
+</div>

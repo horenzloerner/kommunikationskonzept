@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h1>Zur Gruppenzuweisung bitte den QR-Code in Ihrer Nähe einscannen.</h1>
+<input type="text" [(ngModel)]="this.groupName">
+<button ion-button class="bottom-right-button" (tap)="scanGroupCode();">QR-Code scannen</button>
+</ion-content>

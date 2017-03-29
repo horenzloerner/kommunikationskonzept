@@ -1,0 +1,25 @@
+<ion-content [attr.opacity]="this.opacity" *ngIf="this.mainTutorial || this.chargenTutorial">
+    <div class="bodydiv" style="height: 100%; background-color: rgb(88,89,91)">
+    <ion-slides *ngIf="this.mainTutorial">
+  <ion-slide *ngFor="let slide of slides" [style.background-color] ="slide.color">
+    <h1>{{slide.headline}}</h1>
+    <h2>{{slide.subHeadline}}</h2>
+    <p>{{slide.content}}</p>
+  </ion-slide>
+    <ion-slide style="background-color:rgb(207,52,108);">
+    <h1>Viel Erfolg!</h1>
+    <h3>Sobald der Administrator das Spiel startet kann es los gehen!</h3>
+        <button (tap)="this.playNow()" ion-button large clear icon-right color="primary">
+        Jetzt spielen
+    <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-slide>
+</ion-slides>  
+    </div>
+</ion-content>
+<ion-tabs>
+    <ion-tab tabTitle="Bestellen" [root]="customerOrderPage"></ion-tab>
+    <ion-tab tabTitle="Bestellstatus" [root]="customerOrdersPage"></ion-tab>
+    <ion-tab tabTitle="Aufträge" [root]="customerOverviewPage"></ion-tab>
+    <ion-tab tabTitle="Spielstand" [root]="customerScorePage"></ion-tab>
+</ion-tabs>

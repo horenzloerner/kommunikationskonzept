@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <a class="navbar-brand" routerLink="play-now">Play now!</a>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="game-rules" routerLinkActive="active">Game Rules</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="database-setup" routerLinkActive="active">Database Setup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="questions-setup" routerLinkActive="active">Add Question</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="questions-management" routerLinkActive="active">Manage Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="slides-setup" routerLinkActive="active">Add Slide</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" routerLink="slides-management" routerLinkActive="active">Manage Slides</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

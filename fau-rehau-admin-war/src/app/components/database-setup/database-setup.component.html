@@ -1,0 +1,23 @@
+<h1>Database Setup</h1>
+<form #main="ngForm" (ngSubmit)="submitForm(main)">
+    <div class="form-group">
+        <label for="db-url">Database-URL</label>
+        <input class="form-control" name="db-url" ngModel placeholder="Enter a new DB URL" id="db-url" type="text">
+    </div>
+    <div class="form-group">
+        <button type="button" (click)="setDatabase(main.db-url)" type="button" class="btn btn-primary">Set Database</button>
+    </div>
+        <div class="form-group">
+        <label for="rest-url">REST-URL</label>
+        <input class="form-control" name="rest-url" ngModel placeholder="Enter a new REST URL" id="rest-url" type="text">
+    </div>
+    <div class="form-group">
+        <button type="button" (click)="setRESTUrl(main.rest-url)" type="button" class="btn btn-primary">Set REST-URL</button>
+    </div>
+        <div class="form-group">
+        <button type="button" (click)="initQuestions()" type="button" class="btn btn-primary">Init Questions DB</button>
+    </div>
+            <div class="form-group">
+        <button type="button" (click)="initSlides()" type="button" class="btn btn-primary">Init Slides DB</button>
+    </div>
+</form>

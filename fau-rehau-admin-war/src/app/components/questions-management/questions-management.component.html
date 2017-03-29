@@ -1,0 +1,11 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Label</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let questionData of questionDataCollection"><td>{{questionData.id}}</td><td>{{questionData.doc.label}}</td></tr>
+        </tbody>
+    </table>
+</div>

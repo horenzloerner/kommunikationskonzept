@@ -1,0 +1,37 @@
+<div class="container">
+    <form #main="ngForm" (ngSubmit)="submitForm(main)">
+        <label for="info" class="btn btn-info">Producer<input type="checkbox" id="info" name="producer-role" ngModel class="badgebox"><span class="badge"></span></label>
+        <label for="success" class="btn btn-success">consumer<input type="checkbox" id="success" name="consumer-role" ngModel class="badgebox"><span class="badge"></span></label>
+        <div class="form-group">
+            <label for="unique-id">Unique Id</label>
+            <input class="form-control" type="text" name="unique-id" id="unique-id" ngModel>
+        </div>    
+        <div class="form-group">
+            <label for="headline">Headline</label>
+            <input class="form-control" type="text" name="headline" id="headline" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="subheadline">Subheadline</label>
+            <input class="form-control" type="text" name="subheadline" id="subheadline" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="header">Content</label>
+            <textarea cols="3" class="form-control" name="content" id="content" ngModel></textarea>
+        </div>
+        <div class="form-group">
+            <label for="brColor">Colorcode</label>
+            <input type="color" [(ngModel)]="brColor" name="brColor" id="brColor" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="fontColor">Fontcolor</label>
+            <input type="color" [(ngModel)]="fontColor" name="fontColor" id="fontColor" ngModel>
+        </div>
+        <div class="slide-preview" [style.background-color]="brColor" [style.color]="fontColor">
+            <h2>{{main?.form?.controls?.headline?.value}}</h2>
+            <h3>{{main?.form?.controls?.subheadline?.value}}</h3>
+            <p>{{main?.form?.controls?.content?.value}}</p>
+        </div>
+        <button class="btn btn-primary float-md-right" type="submit">Submit Slide</button>
+    </form>
+</div>

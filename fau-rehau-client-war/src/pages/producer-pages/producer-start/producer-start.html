@@ -1,0 +1,34 @@
+
+
+
+
+
+<ion-content *ngIf="this.mainTutorial || this.chargenTutorial">
+    <div class="bodydiv" style="height: 100%; background-color: rgb(88,89,91)">
+    <ion-slides *ngIf="this.mainTutorial">
+  <ion-slide *ngFor="let slide of slides" [style.background-color] ="slide.color">
+    <h1>{{slide.headline}}</h1>
+    <h2>{{slide.subHeadline}}</h2>
+    <p>{{slide.content}}</p>
+  </ion-slide>
+    <ion-slide style="background-color:rgb(207,52,108);">
+    <h1>Viel Erfolg!</h1>
+    <h3>Sobald das Spiel gestartet wurde erscheint hier der Button zum loslegen!</h3>
+        <button (tap)="playNow()" ion-button large clear icon-right color="primary">
+        Jetzt spielen
+    <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-slide>
+
+</ion-slides>
+    </div>
+</ion-content>
+
+<div class="br-div">
+    <ion-tabs>
+        <ion-tab tabTitle="Bestellungen" [root]="producerOrderPage"></ion-tab>
+        <ion-tab tabTitle="Maschinen" [root]="producerMachinesPage"></ion-tab>
+        <ion-tab tabTitle="Wartung" [root]="producerRepairPage"></ion-tab>
+        <ion-tab tabTitle="Spielstand" [root]="producerScorePage"></ion-tab>
+    </ion-tabs>
+</div>

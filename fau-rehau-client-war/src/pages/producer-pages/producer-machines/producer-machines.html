@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-left>
+        <ion-icon name="cash"></ion-icon>
+        {{ this.userService.currentPlayer.currentMoney }} €
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Machinen
+    </ion-list-header>
+    <ion-item *ngFor="let item of this.userService.currentPlayer.machines; let i = index">
+      <h2>Maschine {{i}}</h2>
+      <span *ngIf="item.active === true" style="margin-left:40px; color:green; text-decoration: underline;">AUSGEWÄHLT</span>
+<div *ngIf="item.status !== 'NEED_REPAIR' && item.status !== 'REPAIRING'" class="workload">
+  <div class="current-state" [style.margin-left.%]="item.workloadPercentage"></div>
+  <div class="current-value">{{item.workloadPercentage}}%</div>
+</div>
+<div *ngIf="item.status === 'NEED_REPAIR'">
+  <h2>Maschine ist defekt</h2>
+</div>
+<div *ngIf="item.status === 'REPAIRING'">
+  <h2>Maschine wird repariert</h2>
+</div>
+<button style="float:leftt;"(tap)="setMachine(i);" ion-button clear item-right>Maschine auswählen</button>
+
+</ion-item>
+
+</ion-list>
+</ion-content>

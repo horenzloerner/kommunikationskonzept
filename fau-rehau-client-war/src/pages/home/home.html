@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label floating>Benutzername</ion-label>
+    <ion-input [(ngModel)]="inputName" type="Name"></ion-input>
+  </ion-item>
+</ion-list>
+
+<button ion-button (tap)="createUser();">Weiter</button>
+
+</ion-content>

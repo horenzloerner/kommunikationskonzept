@@ -1,0 +1,11 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Label</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let slideData of slideDataCollection"><td>{{slideData.id}}</td><td>{{slideData.doc.headline}}</td></tr>
+        </tbody>
+    </table>
+</div>

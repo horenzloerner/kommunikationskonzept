@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Rehau Demo
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<h1>Vielen Dank für Ihre Teilnahme</h1>
+<ul>
+    <li *ngFor="let scoreboardEntry of this.userService.scoreboardEntries">{{scoreboardEntry.name}} -- {{scoreboardEntry.score}}</li>
+</ul>
+
+<button ion-button (tap)="reload();">Erneut</button>
+
+</ion-content>

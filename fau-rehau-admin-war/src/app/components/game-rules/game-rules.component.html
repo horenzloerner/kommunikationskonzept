@@ -1,0 +1,26 @@
+<div class="container">
+    <form #main="ngForm" (ngSubmit)="submitForm(main)">
+        <div class="form-group">
+            <label for="quest-name">Quest Name</label>
+            <input class="form-control" type="text" name="quest-name" id="quest-name" ngModel>
+        </div>    
+        <div class="form-group">
+            <label for="ammount-a">Ammount Product A</label>
+            <input class="form-control" type="text" name="ammount-a" id="ammount-a" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label for="ammount-b">Ammount Product B</label>
+            <input class="form-control" type="text" name="ammount-b" id="ammount-b" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="ammount-c">Ammount Product C</label>
+            <textarea cols="3" class="form-control" name="ammount-c" id="ammount-c" ngModel></textarea>
+        </div>
+        <div class="form-group">
+            <label for="bonus-points">Bonus Points</label>
+            <textarea cols="3" class="form-control" name="bonus-points" id="bonus-points" ngModel></textarea>     
+        </div>
+        <button class="btn btn-primary float-md-right" type="submit">Submit Quest</button>
+    </form>
+</div>

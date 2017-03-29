@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-left>
+        <ion-icon name="cash"></ion-icon>
+        {{ this.userService.currentPlayer.currentMoney }} €
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button>
+        # {{this.userService.currentPlayer.currentScore}}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1>Neues Produkt bestellen</h1>
+<ion-list>
+  <ion-item>
+    <div style="background-color: #000;" class="left"></div>
+    <div class="right">
+        <h2>Light Product</h2>
+        <h3>10€</h3>
+        <p>Die günstigste Variante</p>
+    </div>
+  </ion-item>
+    <ion-item>
+    <div style="background-color: #00FF00;" class="left"></div>
+    <div class="right">
+        <h2>Normal Product</h2>
+        <h3>20€</h3>
+        <p>Die normale Version</p>
+    </div>
+  </ion-item>
+    <ion-item>
+    <div style="background-color: #FF0000;" class="left"></div>
+    <div class="right">
+        <h2>Professional Product</h2>
+        <h3>40€</h3>
+        <p>Die Professionelle Version</p>
+    </div>
+  </ion-item>
+</ion-list>
+<ion-item>
+  <ion-badge item-right>{{this.ammount}}</ion-badge>
+</ion-item>
+  <ion-item>
+    <ion-range min="0" snaps="true" step="10" max="200" [(ngModel)]="ammount" pin="true" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>200</ion-label>
+    </ion-range>
+  </ion-item>
+
+<button (tap)="scanCode();" middle ion-button>QR-Code Scannen</button>
+</ion-content>

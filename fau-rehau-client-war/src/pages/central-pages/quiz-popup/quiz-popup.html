@@ -1,0 +1,15 @@
+<ion-content padding>
+    <h2>
+        {{question?.label}}
+    </h2>
+    <p>{{question?.description}}</p>
+    <ion-list>
+        <ion-list-header>
+            Antwortmöglichkeiten
+        </ion-list-header>
+        <ion-item text-wrap (tap)="solveQuiz(option)" *ngFor="let option of question?.options">
+        <h2>{{option.label}}</h2>
+        <p>{{option.description}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

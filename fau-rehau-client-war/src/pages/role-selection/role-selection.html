@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Rollenwahl</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="buttons-components-page">
+<ion-list>
+    <ion-item (tap)="goToCustomer();">
+    <ion-avatar item-left>
+      <img src="assets/pictures/customer.png">
+    </ion-avatar>
+    <h2>Kunde</h2>
+    <h3>Die Simulation als Kunde spielen</h3>
+    <p>Der Kunde stellt Aufträge usw.</p>
+  </ion-item>
+    <ion-item (tap)="goToProducer();">
+    <ion-avatar item-left>
+      <img src="assets/pictures/producer.png">
+    </ion-avatar>
+    <h2>Produzent</h2>
+    <h3>Die Simulation als Produzent spielen</h3>
+    <p>Der Produzent ist zuständig für die Bearbeitung...</p>
+  </ion-item>
+</ion-list>
+</ion-content>
