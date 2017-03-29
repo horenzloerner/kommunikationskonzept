@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { ProducerStartPage } from '../producer-pages/producer-start/producer-start';
-import { CustomerStartPage } from '../customer-pages/customer-start/customer-start';
+import { ProducerStartPage } from '../../producer-pages/producer-start/producer-start';
+import { CustomerStartPage } from '../../customer-pages/customer-start/customer-start';
 
-import { UserService } from '../../services/user.service';
-import { DataService } from '../../services/data.service';
+import { UserService } from '../../../services/user.service';
+import { DataService } from '../../../services/data.service';
 
 import { Player } from '../../model/player';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-name-selection',
+  templateUrl: 'name-selection.html'
 })
-export class HomePage {
+export class NameSelectionPage {
 inputName: string;
 
   constructor(public navCtrl: NavController, public userService: UserService, public dataService: DataService) {

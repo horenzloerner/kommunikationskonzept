@@ -9,7 +9,7 @@ import { ProducerRepairPage } from '../producer-repair/producer-repair';
 import { DataService } from '../../../services/data.service';
 import { Slide } from '../../../model/slide';
 import { QuizPopupPage } from '../../central-pages/quiz-popup/quiz-popup';
-import { GameOverPage } from '../../game-over/game-over';
+import { GameOverPage } from '../../central-pages/game-over/game-over';
 
 @Component({
   selector: 'producer-start',

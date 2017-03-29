@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 import { NavController, ModalController, Events } from 'ionic-angular';
-import { CustomerOrderPage } from '../customer-order/customer-order';
-import { CustomerOverviewPage } from '../customer-overview/customer-overview';
+import { CustomerQuestsPage } from '../customer-quests/customer-quests';
+import { CustomerSubmitPage } from '../customer-submit/customer-submit';
 import { CustomerScorePage } from '../customer-score/customer-score';
 import { CustomerOrdersPage } from '../customer-orders/customer-orders';
 import { QuizPopupPage } from '../../central-pages/quiz-popup/quiz-popup';
 import { DataService } from '../../../services/data.service';
 import { UserService } from '../../../services/user.service';
 import { Slide } from '../../../model/slide';
-import { GameOverPage } from '../../game-over/game-over';
+import { GameOverPage } from '../../central-pages/game-over/game-over';
 
 @Component({
   selector: 'customer-start',
@@ -21,8 +21,8 @@ export class CustomerStartPage {
   currentTopMargin: number = 56;
   currentBottomMargin: number = 0;
   customerScorePage: any = CustomerScorePage;
-  customerOrderPage: any = CustomerOrderPage;
-  customerOverviewPage: any = CustomerOverviewPage;
+  customerSubmitPage: any = CustomerSubmitPage;
+  customerQuestsPage: any = CustomerQuestsPage;
   customerOrdersPage: any = CustomerOrdersPage;
   chargenTutorial: boolean;
   mainTutorial: boolean = true;

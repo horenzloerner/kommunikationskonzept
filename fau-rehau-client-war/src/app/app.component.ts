@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { SelectionPage } from '../pages/home/selection';
-
+import { GroupSelectionPage } from '../pages/central-pages/group-selection/group-selection';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = SelectionPage;
+  rootPage = GroupSelectionPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

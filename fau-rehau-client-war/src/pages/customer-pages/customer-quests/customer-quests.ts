@@ -7,10 +7,10 @@ import { NavController, ModalController, NavParams } from 'ionic-angular';
 import { QuizPopupPage } from '../../central-pages/quiz-popup/quiz-popup';
 
 @Component({
-  selector: 'customer-overview',
-  templateUrl: 'customer-overview.html'
+  selector: 'customer-quests',
+  templateUrl: 'customer-quests.html'
 })
-export class CustomerOverviewPage {
+export class CustomerQuestsPage {
 
 
   constructor(public modalCtrl: ModalController, public dataService: DataService, public navCtrl: NavController, public userService: UserService) {

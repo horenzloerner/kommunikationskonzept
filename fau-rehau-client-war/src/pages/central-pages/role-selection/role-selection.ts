@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import { UserService } from '../../services/user.service';
+import { NameSelectionPage } from '../name-selection/name-selection';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'page-role-selection',
@@ -15,10 +15,10 @@ export class RoleSelectionPage {
   }
   goToProducer() {
       this.userService.currentPlayer.role = "producer";
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(NameSelectionPage);
   }
   goToCustomer(){
       this.userService.currentPlayer.role = "consumer";
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(NameSelectionPage);
   }
 }

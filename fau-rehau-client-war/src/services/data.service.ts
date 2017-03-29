@@ -261,7 +261,7 @@ export class DataService {
         } else if (err.status === 406) {
             msg = "Game "
         } else {
-            msg = "Unerwateter Serverfehler";
+            msg = "Unerwateter Serverfehler + err";
         }
 
         let toast = this.toastCtrl.create({

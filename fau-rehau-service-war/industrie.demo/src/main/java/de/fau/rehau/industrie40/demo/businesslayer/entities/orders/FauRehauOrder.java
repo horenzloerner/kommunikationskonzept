@@ -46,7 +46,7 @@ public abstract class FauRehauOrder {
 	}
 	
 	public void increaseProgress(FauRehauMachine machine) {
-		this.setProgress(this.getProgress() + (0.5 / (this.timeCost*this.ammount) * 100));
+		this.setProgress(this.getProgress() + (double)(0.5 / (this.timeCost*this.ammount) * 100));
 
 		for(FauRehauAttribute attribute : this.fauRehauAttributes) {
 			if(Math.random() >= 0.5) {

@@ -15,6 +15,7 @@ public class FauRehauOrderFactory {
 		} else if(orderCode.equals("pro")) {
 			fauRehauOrder = new FauRehauOrderPro();
 		}
+
 		fauRehauOrder.setOwner(owner);
 		fauRehauOrder.setId(idCounter);
 		fauRehauOrder.setAmmount(ammount);

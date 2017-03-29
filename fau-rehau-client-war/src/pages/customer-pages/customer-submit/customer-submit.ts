@@ -9,9 +9,9 @@ import { QuizPopupPage } from '../../central-pages/quiz-popup/quiz-popup';
 
 @Component({
   selector: 'customer-order',
-  templateUrl: 'customer-order.html'
+  templateUrl: 'customer-submit.html'
 })
-export class CustomerOrderPage {
+export class CustomerSubmitPage {
   ammount: number;
 
   constructor(private alertCtrl: AlertController, private modalCtrl: ModalController, public navCtrl: NavController, public userService: UserService, public dataService: DataService) {
@@ -24,7 +24,7 @@ export class CustomerOrderPage {
       if (value === true) {
         BarcodeScanner.scan().then((barcodeData) => {
           // Success! Barcode data is here
-          this.dataService.submitOrder("light", this.ammount);
+          this.dataService.submitOrder(barcodeData.text, this.ammount);
         }, (err) => {
           // An error occurred
           let alert = this.alertCtrl.create({
